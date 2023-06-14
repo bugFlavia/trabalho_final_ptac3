@@ -9,17 +9,22 @@ export default async function Home() {
   const produtos = await req.json();
 
   return (
-    <main> <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
+    <main  className="grid grid-cols-3 gap-5"> <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
+
+    <div>
 
       {produtos.map(produtos => (
-        <div key={produtos.titulo}>
-          <p> {produtos.dt_cad}</p>
-          <p>{produtos.preco}</p>
-          <p>{produtos.descricao}</p>
+        <div  key={produtos.id}>
+          <h1>{produtos.titulo}</h1>
+          <p> {produtos.descricao}</p>
           <img src={produtos.imagem}/>
+          <p>{produtos.preco}</p>
+          <p>{produtos.dt_cad}</p>
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
         </div>
       ))}
+
+      </div>
     </main>
   )
 }

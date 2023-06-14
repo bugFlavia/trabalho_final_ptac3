@@ -5,23 +5,27 @@ import { useRouter } from 'next/navigation'
 
 export default function Cadastro() {
     const route = useRouter();
-    const [nome, setNome] = useState();
-    const [idade, setIdade] = useState();
-    const [uf, setUF] = useState();
+    const [titulo, setTitulo] = useState();
+    const [descricao, setDescricao] = useState();
+    const [preco, setPreco] = useState();
+    const [dt_cad, setDt_cad] = useState();
+    const [imagem, setImagem] = useState();
 
     const cadastrar = (e) => {
         e.preventDefault()
         
-        const pessoa = {
-            nome: nome,
-            idade: idade,
-            uf: uf
+        const produto = {
+            titulo: titulo,
+            descricao: descricao,
+            preco: preco,
+            dt_cad: dt_cad,
+            imagem: imagem,
         }
-        const pessoaJson = JSON.stringify(pessoa);
-        fetch("http://localhost:3003/pessoa", {
+        const produtoJson = JSON.stringify(produto);
+        fetch("http://localhost:3003/produtos", {
             method: "POST",
             headers: { "content-Type": "application/json" },
-            body: pessoaJson
+            body: produtoJson
         }).then(function(){ route.push("/")}).catch(()=> console.log("Não foi possível cadastrar!"))
     }
 
@@ -30,21 +34,33 @@ export default function Cadastro() {
             <form  onSubmit={cadastrar}>
                 <input
                     type="text"
-                    placeholder='Nome:'
-                    nome="nome"
-                    onChange={e => setNome(e.target.value)}
+                    placeholder='Título:'
+                    nome="titulo"
+                    onChange={e => setTitulo(e.target.value)}
                 /><br/>
                 <input
                     type="text"
-                    placeholder='Idade:'
-                    nome="idade"
-                    onChange={e => setIdade(e.target.value)}
+                    placeholder='Descrição:'
+                    nome="descricao"
+                    onChange={e => setDescricao(e.target.value)}
+                /><br/>
+                <input
+                    type="number"
+                    placeholder='Preço:'
+                    nome="preco"
+                    onChange={e => setPreco(e.target.value)}
                 /><br/>
                 <input
                     type="text"
-                    placeholder='UF:'
-                    nome="uf"
-                    onChange={e => setUF(e.target.value)}
+                    placeholder='Data de cadastro:'
+                    nome="dt_cad"
+                    onChange={e => setDt_cad(e.target.value)}
+                /><br/>
+                <input
+                    type="text"
+                    placeholder='URL da imagem:'
+                    nome="imagem"
+                    onChange={e => setImagem(e.target.value)}
                 /><br/>
                 <button type='submit'>Cadastrar</button>
                 <div>
