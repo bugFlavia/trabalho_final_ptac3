@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import Navbar from './componentes/navbar';
 
 export default async function Home() {
 
@@ -9,18 +10,20 @@ export default async function Home() {
   const produtos = await req.json();
 
   return (
-    <main  className="grid grid-cols-3 gap-5"  style={{}}> <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
+    <main  style={{}}>
+    <Navbar></Navbar>
 
-    <div>
+    <div className="grid grid-cols-3 gap-5">
 
       {produtos.map(produtos => (
-        <div  key={produtos.id}>
+        <div className=""  key={produtos.id}>
           <h1  className="font-bold text-3xl pb-10 underline">{produtos.titulo}</h1>
           <p> {produtos.descricao}</p>
           <img src={produtos.imagem}/>
           <p>{produtos.preco}</p>
           <p>{produtos.dt_cad}</p>
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
+        
         </div>
       ))}
 

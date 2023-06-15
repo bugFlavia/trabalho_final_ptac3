@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    background-color: #FFD7D3;
+    margin:0;
+    padding:0;
+}
+
+nav{
+    background-color: white;
+    height: 50px;
+}
+
+nav ul{
+   display: flex;
+   padding-left: 45px;
+}
+
+nav ul li{
+  padding:5px 55px 15px 0px;
+}
+
+#rota{
+  color:black;
+  font-size: 18px;
+}
+
+#rota:hover{
+   text-decoration:underline;
+}
