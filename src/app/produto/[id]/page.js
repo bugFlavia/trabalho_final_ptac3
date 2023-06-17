@@ -29,6 +29,20 @@ export default async function Produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
+
+       const atualizar = () => {
+        console.log(idJson)
+        try {
+            fetch("http://localhost:3003/produtos", {
+                method: "PUT",
+                headers: { 'content-type': 'application/json' },
+                body: idJson
+            })
+            router.push("/");
+        } catch (error) {
+            alert("Ocorreu um erro" + error)
+        }
+    }
     return (
         <div>
             <p>{produto.titulo}</p>
@@ -37,6 +51,7 @@ export default async function Produto({ params }) {
             <p>{produto.descricao}</p>
             <img src={produto.imagem}/>
             <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
+        <button onClick={e => e.preventDefault(atualizar())}>Atualizar</button>
 
         </div>
 
