@@ -51,7 +51,7 @@ export default async function Produto({ params }) {
             <p>{produto.descricao}</p>
             <img src={produto.imagem}/>
             <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
-        <button onClick={e => e.preventDefault(atualizar())}>Atualizar</button>
+        <button onClick={e => e.preventDefault(atualizar())}>Editar</button>
 
         </div>
 
