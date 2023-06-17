@@ -38,7 +38,7 @@ export default async function Produto({ params }) {
                 headers: { 'content-type': 'application/json' },
                 body: idJson
             })
-            router.push("/cadastro/page");
+            router.push("/cadastro");
         } 
     }
     return (
