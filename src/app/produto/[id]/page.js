@@ -39,9 +39,7 @@ export default async function Produto({ params }) {
                 body: idJson
             })
             router.push("/cadastro");
-        } catch (error) {
-            alert("Ocorreu um erro" + error)
-        }
+        } 
     }
     return (
         <div>
