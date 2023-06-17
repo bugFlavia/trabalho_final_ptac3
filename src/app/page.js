@@ -1,8 +1,10 @@
 "use client"
 import Link from 'next/link';
 import Navbar from './componentes/navbar';
+import Carrossel from './componentes/carrossel';
 
 export default async function Home() {
+
 
   const req = await fetch("http://localhost:3003/produtos", {
     cache: "no-cache"
@@ -12,6 +14,10 @@ export default async function Home() {
   return (
     <main  style={{}}>
     <Navbar></Navbar>
+
+    <div className="flex justify-center items-center w-100">
+      <Carrossel />
+    </div>
 
     <div className="grid grid-cols-3 gap-5">
 
