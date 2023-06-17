@@ -33,7 +33,7 @@ export default async function Produto({ params }) {
        const atualizar = () => {
         console.log(idJson)
         try {
-            fetch("http://localhost:3003/produtos", {
+            fetch("http://localhost:3003/produto", {
                 method: "PUT",
                 headers: { 'content-type': 'application/json' },
                 body: idJson

@@ -3,19 +3,36 @@
 @tailwind utilities;
 
 *{
-    background-color: #FFD7D3;
     margin:0;
     padding:0;
 }
 
 nav{
     background-color: white;
-    height: 50px;
+    background-image: url('../../public/imagens/epiphany.png');
+    background-repeat: no-repeat;
+    background-size: 9%;
+    background-color: #FFD7D3;
+    height: 150px;
+    background-position: 3% 35%;
+}
+
+#pesquisa{
+          margin-left:45%;
+          padding-top: 0px;
+          display:flex;
+}
+
+#pesquisa input{
+                background-color: transparent;
+                border-bottom: solid black 1px;
 }
 
 nav ul{
    display: flex;
-   padding-left: 45px;
+   padding-left: 250px;
+   padding-top: 50px;
+
 }
 
 nav ul li{
@@ -23,10 +40,22 @@ nav ul li{
 }
 
 #rota{
-  color:black;
+  color: black;
+  font-weight: bold;
+  font-family: Georgia, serif;
   font-size: 18px;
 }
 
 #rota:hover{
-   text-decoration:underline;
+  background-image: linear-gradient(to bottom, rebeccapurple, pink, steelblue);
+  
+
+  background-clip: text;
+  -webkit-background-clip: text; 
+
+  
+  -webkit-text-fill-color: transparent;
+
+
+  color: black;
 }
