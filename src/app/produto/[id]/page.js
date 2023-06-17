@@ -38,10 +38,8 @@ export default async function Produto({ params }) {
                 headers: { 'content-type': 'application/json' },
                 body: idJson
             })
-            router.push("/cadastro");
-        } catch (error) {
-            alert("Ocorreu um erro" + error)
-        }
+            router.push("/cadastro/page");
+        } 
     }
     return (
         <div>
