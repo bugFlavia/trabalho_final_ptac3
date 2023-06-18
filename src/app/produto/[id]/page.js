@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from "next/navigation";
 import Navbar from "@/app/componentes/navbar";
+import Rodape from "@/app/componentes/rodape";
 
 export default async function Produto({ params }) {
     const router = useRouter();
@@ -45,9 +46,11 @@ export default async function Produto({ params }) {
         }
     }
     return (
-        <div className="h-screen geral">
+        <div className="geral h-screen">
             <Navbar/>
-            <div className="bg-white rounded-lg mr-auto ml-auto shadow-xl text-center mt-14 w-1/2">
+            <div className="geral">
+
+            <div className="bg-white rounded-lg mr-auto ml-auto shadow-xl mt-14 text-center w-1/2 mb-24">
             <h1 className="font-bold pt-4 text-2xl">{produto.titulo}</h1>
             <p className='text-lg mt-2 mb-4'>{produto.descricao}</p>
             <img className="w-1/4 h-1/4 mr-auto ml-auto" src={produto.imagem}/>
@@ -55,6 +58,9 @@ export default async function Produto({ params }) {
             <p>{produto.dt_cad}</p>
             <button className="botao w-80 mt-5 mb-5" onClick={e => e.preventDefault(remover())}>REMOVER</button><br/>
             </div>
+            <Rodape/>
+            </div>
+            
             
         </div>
 

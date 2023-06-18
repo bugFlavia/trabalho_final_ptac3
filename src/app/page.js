@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link';
 import Navbar from './componentes/navbar';
+import Rodape from './componentes/rodape';
 import Carrossel from './componentes/carrossel';
 
 export default async function Home() {
@@ -19,7 +20,7 @@ export default async function Home() {
       <Carrossel />
     </div>
 
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols-4 gap-5 mb-24">
 
       {produtos.map(produtos => (
         <div className="produto"  key={produtos.id}>
@@ -34,6 +35,7 @@ export default async function Home() {
       ))}
 
       </div>
+      <Rodape/>
     </main>
   )
 }

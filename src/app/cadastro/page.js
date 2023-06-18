@@ -3,6 +3,7 @@ import { useState } from 'react'
 import styles from '../page.module.css'
 import { useRouter } from 'next/navigation'
 import Navbar from '../componentes/navbar'
+import Rodape from '../componentes/rodape'
 
 export default function Cadastro() {
     const route = useRouter();
@@ -33,7 +34,7 @@ export default function Cadastro() {
     return (
         <main className='geral h-screen'>
             <Navbar/>
-        <div className='mt-20'>
+        <div className='mt-20 pb-24 geral'>
             <form className='flex flex-col ml-auto mr-auto w-1/2 bg-white p-10 gap-2 rounded-lg' onSubmit={cadastrar}>
                 <input
                     type="text"
@@ -70,6 +71,7 @@ export default function Cadastro() {
                 </div>
             </form>
         </div>
+        <Rodape/>
         </main>
     );
 }
