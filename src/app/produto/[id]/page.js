@@ -40,6 +40,7 @@ export default async function Produto({ params }) {
                 headers: { 'content-type': 'application/json' },
                 body: idJson
             })
+            remover()
             router.push("/cadastro");
         } catch (error) {
             alert("Ocorreu um erro" + error)
@@ -57,6 +58,8 @@ export default async function Produto({ params }) {
             <p className='font-semibold text-lg'>{produto.preco}</p>
             <p>{produto.dt_cad}</p>
             <button className="botao w-80 mt-5 mb-5" onClick={e => e.preventDefault(remover())}>REMOVER</button><br/>
+            <button className="botao w-80 mt-5 mb-5" onClick={e => e.preventDefault(atualizar())}>EDITAR</button><br/>
+
             </div>
             <Rodape/>
             </div>
