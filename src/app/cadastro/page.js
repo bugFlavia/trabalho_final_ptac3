@@ -49,7 +49,7 @@ export default function Cadastro() {
                     onChange={e => setDescricao(e.target.value)}
                 /><br/>
                 <input
-                    type="number"
+                    type="text"
                     placeholder='Preço:'
                     nome="preco"
                     onChange={e => setPreco(e.target.value)}
@@ -61,7 +61,7 @@ export default function Cadastro() {
                     onChange={e => setDt_cad(e.target.value)}
                 /><br/>
                 <input
-                    type="text"
+                    type="url"
                     placeholder='URL da imagem:'
                     nome="imagem"
                     onChange={e => setImagem(e.target.value)}
