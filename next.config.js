@@ -5,7 +5,7 @@ const nextConfig = {
         return [
           {
             source: '/api/:path*',
-            destination: 'https://localhost:3003/',
+            destination: 'https://trabalho-final-ptas2-oq6e.vercel.app/',
           },
         ]
       },

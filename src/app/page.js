@@ -7,10 +7,10 @@ import Carrossel from './componentes/carrossel';
 export default async function Home() {
 
 
-  const req = await fetch("http://localhost:3003/produtos", {
+  const baseUrl = await fetch("https://trabalho-final-ptas2-oq6e.vercel.app/produtos", {
     cache: "no-cache"
   });
-  const produtos = await req.json();
+  const produtos = await baseUrl.json();
 
   return (
     <main className='geral'>
