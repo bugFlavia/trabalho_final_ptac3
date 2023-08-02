@@ -9,7 +9,7 @@ export default async function Produto({ params }) {
 
     const idJson = JSON.stringify(id);
 
-    const req = await fetch("http://localhost:3003/produtos", {
+    const req = await fetch("https://trabalho-final-ptas2-oq6e.vercel.app/produtos", {
         method: "POST",
         cache: "no-cache",
         headers: { 'content-type': 'application/json' },
@@ -21,7 +21,7 @@ export default async function Produto({ params }) {
     const remover = () => {
         console.log(idJson)
         try {
-            fetch("http://localhost:3003/produtos", {
+            fetch("https://trabalho-final-ptas2-oq6e.vercel.app/produtos", {
                 method: "DELETE",
                 headers: { 'content-type': 'application/json' },
                 body: idJson
@@ -35,7 +35,7 @@ export default async function Produto({ params }) {
        const atualizar = () => {
         console.log(idJson)
         try {
-            fetch("http://localhost:3003/produto", {
+            fetch("https://trabalho-final-ptas2-oq6e.vercel.app/produto", {
                 method: "PUT",
                 headers: { 'content-type': 'application/json' },
                 body: idJson

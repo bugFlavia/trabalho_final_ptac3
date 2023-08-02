@@ -24,7 +24,7 @@ export default function Cadastro() {
             imagem: imagem,
         }
         const produtoJson = JSON.stringify(produto);
-        fetch("http://localhost:3003/produto", {
+        fetch("https://trabalho-final-ptas2-oq6e.vercel.app/produto", {
             method: "POST",
             headers: { "content-Type": "application/json" },
             body: produtoJson
